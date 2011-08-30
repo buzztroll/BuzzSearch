@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/style/style.css" />
+    <title>{% block title %}BuzzSearch{% endblock %}</title>
+    {% block meta %} {% endblock %}
+</head>
+
+<body  topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0"
+        bgcolor="#b9cde5" >
+
+
+<div id="area">
+    <div id="header">
+        <table background="/image/topbg.png" width="100%">
+
+          <tr>
+            <td width="50%" valign="top">
+                <img src="/image/buzzsearch.png" width="225" height="100">
+            </td>
+          </tr>
+
+            <tr><td>
+
+                <table border="0" width="100%" cellspacing="0" cellpadding="0" background="/image/blackline.gif">
+                    <tr>
+                        <td width="100%"><font color="#B8C0F0" face="Arial" size="2"><b>&nbsp;&nbsp;
+                        <a href="/">Home</a>&nbsp;&nbsp; |&nbsp;&nbsp; 
+                        <a href="{{login_out_url}}">{{ login_out_linktext }}</a>
+                        </b></font></td>
+                    </tr>
+                </table>
+
+            </td></tr>
+        </table>
+    </div>
+
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+
+</body>
+</html>

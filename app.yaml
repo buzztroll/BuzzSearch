@@ -1,0 +1,16 @@
+application: buzzsearch
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+
+- url: /image
+  static_dir: image
+
+- url: /style
+  static_dir: style
+
+- url: .*
+  script: main.py
+  login: admin

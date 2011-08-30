@@ -1,0 +1,35 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font: 12px Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #061C37;
+    background: #0c0250;
+    background-repeat:repeat-x;
+}
+
+
+#area
+{
+    margin-top:25px;
+    margin-bottom:25px;
+    height:3500px;
+    width:700px;
+    background-color:#b9cde5;
+    margin: 0 auto 0 auto;
+    text-align:left;
+}
+
+
+#header
+{
+    text-align:left;
+}
+
+#content
+{
+    padding: 25px;
+    text-align:left;
+}

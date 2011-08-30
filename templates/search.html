@@ -1,0 +1,15 @@
+{% extends "base_template.html" %}
+
+{% block title %}LinkedHunter - Welcome{% endblock %}
+
+{% block content %}
+    <h2>
+        Welcome {{ username }}!
+    </h2>
+    <hr>
+    <form action="/results" method="post">
+        <h3>Enter the search terms:</h3>
+        <input type="text" name="terms" size="40" value=""> </input>
+        <input type="submit" value="Search" name="keywords"/>
+   </form>
+{% endblock %}

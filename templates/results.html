@@ -1,0 +1,25 @@
+{% extends "base_template.html" %}
+{% block title %}Buzz Search{% endblock %}
+\{% block content %}
+
+
+<h1>Results of your search for {{search_terms}}</h1>
+
+<table valign="top">
+    <tr>
+        <td><img src="/image/hunt.gif"></td>
+        <td>
+            <table valign="top">
+            {% for link in links %}
+            <tr><td>
+                <h2><a href="{{link.url}}">{{link.title}}</a></h2>
+                <p>{{link.abstract}}</p>
+            </td></tr>
+            {% endfor %}
+
+            </table>
+        </td>
+    </tr>
+<br>
+</table>
+{% endblock %}
