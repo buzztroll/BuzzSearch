@@ -92,7 +92,7 @@ class ResultsHandler(BaseHandler):
 def get_app_base_url():
     server = os.environ['SERVER_SOFTWARE']
     ndx = server.find("Development")
-    scheme = "https"
+    scheme = "http"
     if ndx >= 0:
         scheme = "http"
     return "%s://%s:%s" % (scheme, os.environ['SERVER_NAME'], os.environ['SERVER_PORT'])
@@ -112,6 +112,7 @@ class LandingHandler(BaseHandler):
         elif need_to_oauth_yahoo_user(yahoo_user):
             self.link_yahoo_oauth(yahoo_user, self)
         else:
+            yahoo_user.check_refresh()
             self.write_page("templates/search.html")
 
 class StartOauth(BaseHandler):

@@ -311,7 +311,7 @@ class OAuthClient():
         session_handle = parsed_results['oauth_session_handle'][0]
 
     if not (token and secret) or result.status_code != 200:
-      raise OAuthException("Problem talking to the service")
+      raise OAuthException("Problem talking to the service %d" % (result.status_code))
 
     return {
       "service": self.service_name,

@@ -16,12 +16,13 @@ class YahooUser(object):
         self._get_token_url = "https://api.login.yahoo.com/oauth/v2/get_token"
 
         self._callback_url = callback_url
-        self._oauthclient = get_oauth_client("yahoo", self.admin_user._yahoo_consumer_key, self.admin_user._yahoo_consumer_secret, self._callback_url)
+        self._oauthclient = get_oauth_client("yahoo", self.admin_user.yahoo_consumer_key, self.admin_user.yahoo_consumer_secret, self._callback_url)
 
     def set_consumer_keys(self, key, secret):
         self.admin_user.yahoo_consumer_key = key
         self.admin_user.yahoo_consumer_secret = secret
         self.admin_user.put()
+        self._oauthclient = get_oauth_client("yahoo", self.admin_user.yahoo_consumer_key, self.admin_user.yahoo_consumer_secret, self._callback_url)
 
     def set_auth_response(self, request):
         auth_token = request.get("oauth_token")
